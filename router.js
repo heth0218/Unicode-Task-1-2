@@ -6,13 +6,12 @@ const User=require("./user");
 const config=require("./config/database");
 const bcrypt=require("bcryptjs");
 
-
-
 //GET restro by ID
 router.get('/restro/:id',test,async(req,res)=>{
     const restro=await Restro.find({_id:req.params.id});
         res.send(restro);
     });
+
 //GET all restros
 router.get('/restro',test,async(req,res)=>{
         const restro=await Restro.find({});
